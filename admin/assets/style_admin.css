@@ -1,0 +1,337 @@
+/* Background utama */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../assets/image/bgindex.png') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Kontainer keseluruhan login */
+.login-admin-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-height: 550px;
+}
+
+/* Kiri - gambar */
+.login-admin-left {
+    flex: 1;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-admin-left img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Kanan - form login */
+.login-admin-right {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.login-admin-right h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 26px;
+}
+
+.login-admin-right label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+.login-admin-right input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.login-admin-right button {
+    padding: 12px;
+    background-color: #FF6F00;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-admin-right button:hover {
+    background-color: #FF6F00;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #FF6F00; /* Oranye elegan */
+    color: white;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+}
+
+.sidebar-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #e65100;
+    border-radius: 5px;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* Video Background */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+
+/* Overlay Gelap agar teks tetap jelas */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.chart-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#pieChart {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Data Tamu Page */
+        .container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .filter-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .filter-section label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .filter-section input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-section button {
+            padding: 10px 16px;
+            background-color: #FF6F00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddddddee;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #FF6F00;
+            color: white;
+        }
+
+        .export-buttons {
+            margin-bottom: 20px;
+        }
+
+        .export-buttons a {
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #FF6F00;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .export-buttons a:hover {
+            background-color: #ff5100;
+        }
+
+        body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #eef1f5);
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.welcome-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-in-out;
+    text-align: center;
+}
+
+.welcome-card h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.welcome-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.chart-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.chart-box:hover {
+    transform: translateY(-5px);
+}
+
+.chart-box h2 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+    
+
+/* Responsive font awesome icons */
+.sidebar-menu i {
+    margin-right: 10px;
+}

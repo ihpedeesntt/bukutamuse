@@ -1,0 +1,370 @@
+/* ============================================
+   STYLE: Halaman Sambutan Buku Tamu (index.php)
+   IDENTIFIER: #welcome-page
+   ============================================ */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Gelap 50% */
+  z-index: -1;
+}
+
+
+#welcome-page .welcome-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 32px rgba(255, 152, 0, 0.12), 0 1.5px 6px rgba(0,0,0,0.07);
+    padding: 48px 36px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    color: white;
+}
+
+#welcome-page .welcome-box h1 {
+    color: #ff9800;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+#welcome-page {
+    min-height: 100vh;
+    background: url('assets/image/bgindex.png') center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+#welcome-page .welcome-box h1 {
+    color: #ff9800;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#welcome-page .btn-mulai {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff9800 0%, #ffb74d 100%);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.18);
+    transition: background 0.2s, transform 0.2s;
+}
+.judul-utama {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff9800;
+    margin-bottom: 16px;
+}
+
+.judul-sub {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ff9800;
+    margin-bottom: 32px;
+}
+
+
+#welcome-page .btn-mulai:hover {
+    background: linear-gradient(90deg, #fb8c00 0%, #ffa726 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 500px) {
+    #welcome-page .welcome-box h1 {
+        font-size: 1.2rem;
+    }
+}
+    #welcome-page .welcome-box h1 {
+        font-size: 1.2rem;
+    }
+    #welcome-page .btn-mulai {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+
+
+/* ============================================
+   STYLE: Halaman Form Buku Tamu (form_bukutamu.php)
+   IDENTIFIER: #form-page
+   ============================================ */
+
+#form-page {
+    background: #f3f3f3;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 0;
+}
+
+.form-container {
+    background: #fff;
+    max-width: 480px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.form-container button {
+    margin-top: 20px;
+    width: 100%;
+    background: #ff9800;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.form-container button:hover {
+    background: #fb8c00;
+}
+
+/* ============================================
+   STYLE: Halaman Textbox (textbox.php)
+   IDENTIFIER: #textbox-page
+   ============================================ */
+
+#textbox-page {
+    position: relative;
+    min-height: 100vh;
+    background: url('../assets/image/bgindex.png') center center/cover no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(231, 113, 2, 0.904);
+    z-index: 1;
+}
+
+.textbox {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px 24px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.textbox:hover {
+    transform: scale(1.02);
+}
+
+.textbox p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.textbox input[type="file"] {
+    margin-bottom: 16px;
+    background: rgba(255,255,255,0.8);
+    padding: 8px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.textbox button {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.textbox button:hover {
+    background: #e68900;
+}
+
+.wa-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25d366;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.wa-button:hover {
+    background: #1da851;
+}
+
+.wa-button .wa-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.close-button {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+
+/* ============================================
+   STYLE: Halaman Sambutan Buku Tamu (index.php)
+   IDENTIFIER: #welcome-page
+   ============================================ */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-image: url('image/bgindex.jpg'); /* ✅ path relatif dari style.css */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* gelap 50% */
+  z-index: -1;
+}
+
+
+/* Halaman sambutan */
+#welcome-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome-page .welcome-box {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(255, 152, 0, 0.12), 0 1.5px 6px rgba(0,0,0,0.07);
+    padding: 48px 36px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+#welcome-page .welcome-box h1 {
+    color: #ff9800;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#welcome-page .btn-mulai {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff9800 0%, #ffb74d 100%);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.18);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#welcome-page .btn-mulai:hover {
+    background: linear-gradient(90deg, #fb8c00 0%, #ffa726 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 500px) {
+    #welcome-page .welcome-box {
+        padding: 28px 14px;
+    }
+    #welcome-page .welcome-box h1 {
+        font-size: 1.4rem;
+    }
+    #welcome-page .btn-mulai {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+
+
