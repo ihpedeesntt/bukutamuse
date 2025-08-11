@@ -1,9 +1,8 @@
 <?php
 session_start();
-include '../koneksi.php'; // Pastikan path ini benar
+require_once '../koneksi.php'; // pastikan path benar
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     // Validasi input
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $_SESSION['error'] = "Mohon isi semua field.";
@@ -11,25 +10,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Bersihkan input
-    $username = mysqli_real_escape_string($koneksi, trim($_POST['username']));
+    $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Ambil data admin berdasarkan username
-    $query = "SELECT * FROM admin WHERE username = '$username'";
-    $result = mysqli_query($koneksi, $query);
+    // Cegah SQL injection dengan prepared statement
+    $sql  = "SELECT id_admin, username, password FROM admin WHERE username = ? LIMIT 1";
+    $stmt = $koneksi->prepare($sql);
+    if (!$stmt) {
+        $_SESSION['error'] = "Terjadi kesalahan server.";
+        header("Location: login.php"); exit;
+    }
 
-    // Cek apakah username ditemukan
-    if ($result && mysqli_num_rows($result) > 0) {
-        $admin = mysqli_fetch_assoc($result);
+    $stmt->bind_param('s', $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        // Cek password (TIDAK di-hash, sesuai permintaan)
-        if ($password === $admin['password']) {
-            // Set session login
+    if ($admin = $result->fetch_assoc()) {
+        // Verifikasi password hash
+        if (password_verify($password, $admin['password'])) {
+
+            // Sukses login
+            session_regenerate_id(true);
             $_SESSION['admin_id']   = $admin['id_admin'];
+            $_SESSION['admin_user'] = $admin['username']; 
             $_SESSION['admin_nama'] = $admin['nama'];
-
-            // Redirect ke halaman admin
             header("Location: panel_admin.php");
             exit;
         } else {
@@ -39,8 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['error'] = "Username tidak ditemukan.";
     }
 
-    // Redirect kembali ke login jika gagal
     header("Location: login.php");
     exit;
 }
-?>

@@ -1,3 +1,8 @@
+<?php
+require 'koneksi.php';
+//echo "Koneksi database berhasil!";
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

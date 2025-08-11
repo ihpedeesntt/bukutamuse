@@ -25,7 +25,7 @@ if ($filter_nama !== '') {
     $query .= " AND nama LIKE '%$filter_nama%'";
 }
 if ($filter_tanggal_kunjungan !== '') {
-    $query .= " AND tanggal_kunjungan = '$filter_tanggal_kunjungan'";
+    $query .= " AND DATE(tanggal_kunjungan) = '$filter_tanggal_kunjungan'";
 }
 
 $result = mysqli_query($koneksi, $query);

@@ -1,14 +1,17 @@
 <?php
-$host     = "localhost";
-$username = "root";
-$password = ""; // ganti jika Anda menggunakan password di MySQL
-$database = "bukutamuse"; // sesuaikan dengan nama database Anda
+// Baca file .env
+$env = parse_ini_file(__DIR__ . '/.env');
 
-$koneksi = mysqli_connect($host, $username, $password, $database);
+// Ambil variabel dari .env
+$host     = $env['DB_HOST'];
+$username = $env['DB_USERNAME'];
+$password = $env['DB_PASSWORD'];
+$database = $env['DB_DATABASE'];
 
-// Periksa koneksi
-if (mysqli_connect_errno()) {
-    echo "Koneksi database gagal: " . mysqli_connect_error();
-    exit;
+// Koneksi ke database
+$koneksi = new mysqli($host, $username, $password, $database);
+
+// Cek koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
-?>
